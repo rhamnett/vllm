@@ -64,9 +64,9 @@ def get_model(model_config: ModelConfig) -> nn.Module:
     # Get the quantization config.
     quant_config = None
     if model_config.quantization is not None:
-        if model_class not in _MODEL_CLASSES_SUPPORT_QUANTIZATION:
-            raise ValueError(
-                f"Quantization is not supported for {model_class}.")
+        # if model_class not in _MODEL_CLASSES_SUPPORT_QUANTIZATION:
+        #     raise ValueError(
+        #         f"Quantization is not supported for {model_class}.")
         quant_config = get_quant_config(model_config.quantization,
                                         model_config.model,
                                         model_config.download_dir)
